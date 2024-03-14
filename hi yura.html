@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Привет Юра</title>
+    <style>
+        body {
+            background-color: black;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            color: white; /* Set all text to white */
+        }
+        .container {
+            text-align: center;
+        }
+        .button {
+            background-color: white;
+            color: black;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            margin: 10px;
+            display: inline-block;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <button id="firstButton" class="button" onclick="showText()">Привет Юра</button>
+        <div id="hiddenText" style="display: none;">
+            <p>А ты знаешь сколько киллограм я поднял?</p>
+            <button id="secondButton" class="button" onclick="showWeight()">Сколько?</button>
+            <p id="weight" style="display: none;">115</p>
+            <button id="thirdButton" class="button" onclick="congrats()" style="display: none;">Молодец</button>
+            <p id="thanks" style="display: none;">Скинешь деньжат пожалуйста</p>
+        </div>
+    </div>
+
+    <script>
+        function showText() {
+            document.getElementById("hiddenText").style.display = "block";
+            document.getElementById("firstButton").style.display = "none";
+        }
+
+        function showWeight() {
+            document.getElementById("secondButton").style.display = "none";
+            document.getElementById("thirdButton").style.display = "inline-block";
+            document.getElementById("weight").style.display = "block";
+        }
+
+        function congrats() {
+            document.getElementById("thirdButton").style.display = "none";
+            document.getElementById("thanks").style.display = "block";
+        }
+    </script>
+</body>
+</html>
